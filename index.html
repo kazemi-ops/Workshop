@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEC Paris AI &amp; Entrepreneurship Workshop</title>
+<meta name="description" content="The fourth HEC Paris AI and Entrepreneurship Workshop — 12 December 2026, Jouy-en-Josas. Call for papers open until 30 September 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --indigo:#1B2568; --indigo-d:#131a4c; --violet:#5A2D8C;
+  --magenta:#E0007B; --magenta-d:#B80065; --coral:#F2673C;
+  --wash:#F4F6FC; --paper:#FFFFFF;
+  --tint-rose:#FCEAF2; --tint-blue:#E9EFFA;
+  --ink:#161B45; --muted:#5C6590; --faint:#8990B0;
+  --line:#DCE2F0; --line-s:#C6CFE6;
+  --r:4px; --maxw:1180px;
+  --f-display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --f-body:'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--wash);color:var(--ink);
+  font-family:var(--f-body);font-size:17px;line-height:1.62;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--magenta-d);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--magenta);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.015em;line-height:1.08}
+p{margin:0}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:28px}
+
+/* ---------- shared atoms ---------- */
+.eyebrow{
+  font-family:var(--f-display);font-size:11px;font-weight:700;
+  letter-spacing:.20em;text-transform:uppercase;color:var(--magenta);
+  display:flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--magenta);flex:none}
+.eyebrow.on-dark{color:#FF7FC0}
+.eyebrow.on-dark::before{background:#FF7FC0}
+.sec-title{font-size:clamp(20px,2vw,25px);font-weight:700;margin:0;
+  padding-top:15px;position:relative;letter-spacing:-.01em}
+.sec-title::before{content:"";position:absolute;top:0;left:0;width:26px;height:2px;background:var(--magenta)}
+.sec-lede{margin-top:10px;max-width:66ch;color:var(--muted);font-size:17px}
+
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--f-display);font-size:13px;font-weight:700;
+  letter-spacing:.10em;text-transform:uppercase;
+  padding:14px 24px;border-radius:var(--r);border:1.5px solid transparent;
+  cursor:pointer;transition:transform .18s ease,background .18s ease,box-shadow .18s ease,color .18s ease;
+  text-decoration:none;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--magenta);color:#fff;box-shadow:0 6px 18px rgba(224,0,123,.28)}
+.btn-primary:hover{background:var(--magenta-d);box-shadow:0 10px 26px rgba(224,0,123,.34)}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.btn-outline{border-color:var(--line-s);color:var(--indigo);background:var(--paper)}
+.btn-outline:hover{border-color:var(--indigo);background:var(--paper)}
+
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 26px 28px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.card.lift:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(27,37,104,.10);border-color:var(--line-s)}
+.card h3{font-size:20px;font-weight:700}
+.card p{margin-top:9px;color:var(--muted);font-size:16px;line-height:1.58}
+
+section.band{padding:34px 0}
+section.band.wash{background:var(--wash)}
+section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;gap:26px;height:66px}
+.brand{display:flex;align-items:baseline;gap:10px;font-family:var(--f-display);
+  font-weight:800;letter-spacing:-.02em;font-size:17px;color:var(--indigo);text-decoration:none;flex:none}
+.brand .dot{width:7px;height:7px;border-radius:50%;background:var(--magenta);align-self:center;flex:none}
+.brand small{font-family:var(--f-display);font-weight:600;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--faint)}
+.nav{display:flex;gap:4px;margin-left:auto;align-items:center}
+.nav a{
+  font-family:var(--f-display);font-size:12.5px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);padding:9px 13px;border-radius:var(--r);
+  text-decoration:none;transition:color .15s ease,background .15s ease;white-space:nowrap;
+}
+.nav a:hover{color:var(--indigo);background:var(--tint-blue);text-decoration:none}
+.nav a.active{color:var(--indigo);background:var(--tint-blue)}
+.nav a.btn{margin-left:10px;padding:11px 18px;font-size:12px}
+.nav a.btn-primary{color:#fff}
+.nav a.btn-primary:hover{background:var(--magenta-d);color:#fff}
+.navtoggle{display:none;margin-left:auto;background:none;border:1px solid var(--line-s);
+  border-radius:var(--r);padding:9px 12px;font-family:var(--f-display);font-size:12px;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--indigo);cursor:pointer}
+
+/* ---------- masthead ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(118deg,var(--indigo-d) 0%,var(--indigo) 42%,var(--violet) 100%);color:#fff}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:2;padding-block:48px 46px;display:grid;
+  grid-template-columns:minmax(0,1fr) 296px;gap:44px;align-items:center}
+.hero .wrap>*{min-width:0}
+.mast{max-width:62ch}
+.nb{white-space:nowrap}
+.kicker{font-family:var(--f-display);font-size:11px;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:#FF8AC4}
+.hero h1{margin-top:12px;font-size:clamp(27px,3.3vw,39px);font-weight:800;letter-spacing:-.025em;
+  line-height:1.1;max-width:19ch}
+.mast-when{margin-top:15px;font-family:var(--f-display);font-size:16px;font-weight:600;
+  color:#fff;line-height:1.45}
+.mast-org{margin-top:13px;font-size:15px;line-height:1.5;color:rgba(255,255,255,.80)}
+.mast-org span{color:rgba(255,255,255,.55)}
+
+.mast-key{background:rgba(14,19,58,.72);border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--r);padding:22px 24px;backdrop-filter:blur(10px);
+  box-shadow:0 16px 40px rgba(8,11,38,.30)}
+.mk-lbl{font-family:var(--f-display);font-size:10.5px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:#FF8AC4}
+.mk-date{margin-top:9px;font-family:var(--f-display);font-size:22px;font-weight:700;
+  letter-spacing:-.02em;color:#fff}
+.mk-days{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18);
+  font-size:15px;color:rgba(255,255,255,.72)}
+.mk-days b{font-family:var(--f-display);font-size:26px;font-weight:800;letter-spacing:-.02em;
+  color:#fff;font-variant-numeric:tabular-nums;margin-right:6px}
+.mk-note{margin-top:12px;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.66)}
+
+/* ---------- generic grids ---------- */
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+/* ---------- call for papers ---------- */
+.cfp{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:30px;align-items:start;margin-top:18px}
+.cfp-main .steps{display:grid;gap:0;margin-top:4px;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:56px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step .n{font-family:var(--f-display);font-size:13px;font-weight:800;letter-spacing:.1em;
+  color:var(--magenta);padding-top:4px;font-variant-numeric:tabular-nums}
+.step h4{font-size:18.5px;font-weight:700}
+.step p{margin-top:6px;color:var(--muted);font-size:16px}
+.aside-card{background:var(--indigo);color:#fff;border-radius:var(--r);padding:24px;position:sticky;top:82px}
+.aside-card h3{font-size:19px;font-weight:700;color:#fff}
+.aside-card ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:14px}
+.aside-card li{font-size:15.5px;color:rgba(255,255,255,.82);padding-left:18px;position:relative;line-height:1.5}
+.aside-card li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;
+  border-radius:50%;background:var(--magenta)}
+.aside-card .btn{margin-top:24px;width:100%;justify-content:center}
+
+/* ---------- keynotes ---------- */
+.keynote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.keynote{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.keynote .body{padding:24px 26px 26px}
+.keynote .role{font-family:var(--f-display);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--faint)}
+.keynote h3{margin-top:12px;font-size:29px;font-weight:800;letter-spacing:-.025em;color:var(--indigo)}
+.keynote .aff{margin-top:6px;font-size:16.5px;color:var(--muted);font-weight:600}
+.keynote p{margin-top:16px;color:var(--muted);font-size:16.5px}
+
+/* ---------- topics ---------- */
+.tlist{margin:14px 0 0;padding:0 0 0 22px;max-width:74ch}
+.tlist li{margin-top:5px;font-size:17px;line-height:1.5;color:var(--ink)}
+.tlist li::marker{color:var(--magenta)}
+
+/* ---------- timeline ---------- */
+.tl{margin-top:14px;position:relative;padding-left:0}
+.tl-item{display:grid;grid-template-columns:150px 24px minmax(0,1fr);gap:0;align-items:start}
+.tl-when{font-family:var(--f-display);font-size:13px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--indigo);padding:18px 18px 18px 0;text-align:right}
+.tl-when small{display:block;font-weight:600;color:var(--faint);letter-spacing:.14em;margin-top:5px;font-size:10.5px}
+.tl-rail{position:relative;justify-self:center;width:24px;align-self:stretch}
+.tl-rail::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-s);transform:translateX(-50%)}
+.tl-item:first-child .tl-rail::before{top:32px}
+.tl-item:last-child .tl-rail::before{bottom:calc(100% - 32px)}
+.tl-rail i{position:absolute;left:50%;top:30px;width:11px;height:11px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--magenta);transform:translateX(-50%)}
+.tl-item.key .tl-rail i{background:var(--magenta);width:15px;height:15px;top:28px;
+  box-shadow:0 0 0 5px rgba(224,0,123,.15)}
+.tl-body{padding:16px 0 16px 26px}
+.tl-body h4{font-size:19px;font-weight:700;color:var(--indigo)}
+.tl-body p{margin-top:6px;color:var(--muted);font-size:16px}
+
+/* ---------- venue / sponsors / contact ---------- */
+.venue{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px;align-items:center;margin-top:40px}
+.venue-facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.vf{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:16.5px}
+.vf b{font-family:var(--f-display);font-size:11.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);padding-top:4px;flex:none}
+.vf span{text-align:right;color:var(--indigo);font-weight:600}
+.map{background:var(--tint-blue);border:1px solid var(--line);border-radius:var(--r);
+  padding:38px;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.map .pin{position:absolute;top:38%;left:44%;width:18px;height:18px;border-radius:50%;
+  background:var(--magenta);box-shadow:0 0 0 8px rgba(224,0,123,.18),0 0 0 18px rgba(224,0,123,.08)}
+.map h4{font-size:22px;font-weight:800;color:var(--indigo);letter-spacing:-.02em}
+.map p{margin-top:8px;color:var(--muted);font-size:16px}
+
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.pmail{font-family:var(--f-display);font-size:15px;font-weight:700;letter-spacing:-.01em;
+  color:var(--magenta-d);text-decoration:none;word-break:normal;line-height:1.4;display:block}
+.pmail:hover{color:var(--magenta);text-decoration:underline}
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 22px;
+  display:flex;flex-direction:column;transition:transform .2s ease,border-color .2s ease}
+.pcard:hover{transform:translateY(-3px);border-color:var(--line-s)}
+.pl{font-family:var(--f-display);font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--magenta)}
+.pv{margin-top:14px;font-size:17px;line-height:1.5;color:var(--indigo);font-weight:600}
+.pv b{font-weight:700}
+.pn{margin-top:10px;font-size:14.5px;color:var(--faint);line-height:1.4}
+.plink{margin-top:auto;padding-top:16px;font-family:var(--f-display);font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--magenta-d)}
+.plink:hover{color:var(--magenta);text-decoration:underline}
+.mapwrap{position:relative;height:230px;margin-top:14px;border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;background:var(--tint-blue)}
+.mapframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
+.mapfb{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;padding:24px;text-align:center}
+.mapfb b{font-family:var(--f-display);font-size:16.5px;font-weight:700;color:var(--indigo)}
+.mapnote{font-size:14.5px;color:var(--faint)}
+.mappin{width:14px;height:14px;border-radius:50%;background:var(--magenta);
+  box-shadow:0 0 0 6px rgba(224,0,123,.16),0 0 0 14px rgba(224,0,123,.07);margin-bottom:8px}
+.mapcap{margin-top:8px;font-size:14.5px;color:var(--faint)}
+.sponsors{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.sponsor{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 22px;min-height:118px;display:flex;align-items:center;
+  transition:border-color .2s ease,transform .2s ease}
+.sponsor:hover{border-color:var(--line-s);transform:translateY(-3px)}
+.sponsor span{font-family:var(--f-display);font-size:15.5px;font-weight:700;color:var(--indigo);
+  line-height:1.3;letter-spacing:-.01em}
+.sponsor small{display:block;font-family:var(--f-display);font-size:10.5px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-top:7px}
+
+.contact{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:40px}
+.cc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.cc .role{font-family:var(--f-display);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--faint)}
+.cc a{display:inline-block;margin-top:12px;font-family:var(--f-display);font-size:20px;
+  font-weight:700;letter-spacing:-.02em;color:var(--indigo);word-break:break-all}
+.cc a:hover{color:var(--magenta)}
+.cc p{margin-top:10px;color:var(--muted);font-size:16px}
+
+.sister{background:var(--tint-rose);border:1px solid #F5CFE1;border-radius:var(--r);
+  padding:18px 22px;margin-top:20px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.sister .txt{flex:1 1 380px}
+.sister h3{font-size:21px;font-weight:700;color:var(--indigo)}
+.sister p{margin-top:8px;color:var(--muted);font-size:16.5px}
+
+/* ---------- programme + archive ---------- */
+.tba{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
+  padding:34px;text-align:center;margin-top:18px}
+.tba .big{font-family:var(--f-display);font-size:clamp(30px,4vw,46px);font-weight:800;
+  letter-spacing:-.03em;color:var(--indigo);text-transform:uppercase}
+.tba p{margin:16px auto 0;max-width:56ch;color:var(--muted);font-size:17.5px}
+.skel{display:grid;gap:10px;margin-top:38px;max-width:620px;margin-inline:auto}
+.skel i{display:block;height:13px;border-radius:2px;background:linear-gradient(90deg,var(--tint-blue),var(--wash),var(--tint-blue));
+  background-size:200% 100%;animation:sh 2.4s ease-in-out infinite}
+.skel i:nth-child(2){width:82%;animation-delay:.18s}
+.skel i:nth-child(3){width:64%;animation-delay:.36s}
+.skel i:nth-child(4){width:74%;animation-delay:.54s}
+@keyframes sh{0%,100%{background-position:0% 0}50%{background-position:-100% 0}}
+
+.ed{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);margin-top:10px;overflow:hidden}
+.ed summary{
+  list-style:none;cursor:pointer;padding:18px 24px;display:flex;align-items:center;gap:20px;
+  transition:background .18s ease;
+}
+.ed summary::-webkit-details-marker{display:none}
+.ed summary:hover{background:var(--tint-blue)}
+.ed .yr{font-family:var(--f-display);font-size:34px;font-weight:800;letter-spacing:-.035em;
+  color:var(--magenta);font-variant-numeric:tabular-nums;line-height:1;flex:none;min-width:88px}
+.ed .meta{flex:1;min-width:0}
+.ed .meta h3{font-size:19.5px;font-weight:700;color:var(--indigo)}
+.ed .meta p{margin-top:5px;color:var(--muted);font-size:15.5px}
+.ed .chev{flex:none;width:12px;height:12px;border-right:2px solid var(--faint);border-bottom:2px solid var(--faint);
+  transform:rotate(45deg);transition:transform .22s ease;margin-right:6px}
+.ed[open] .chev{transform:rotate(-135deg)}
+.ed .prog{border-top:1px solid var(--line);padding:8px 28px 26px}
+.slot{display:grid;grid-template-columns:132px minmax(0,1fr);gap:22px;padding:16px 0;border-bottom:1px solid var(--line)}
+.slot:last-child{border-bottom:0}
+.slot .t{font-family:var(--f-display);font-size:12.5px;font-weight:700;letter-spacing:.06em;
+  color:var(--indigo);font-variant-numeric:tabular-nums;padding-top:3px}
+.slot .ttl{font-size:16.5px;font-weight:600;color:var(--ink);line-height:1.45}
+.slot .who{margin-top:5px;font-size:15px;color:var(--muted)}
+.slot .who b{color:var(--indigo);font-weight:600}
+.slot.kn{background:var(--tint-rose);margin-inline:-14px;padding-inline:14px;border-radius:var(--r);border-bottom:0}
+.slot.kn .ttl::before{content:"Keynote — ";font-family:var(--f-display);font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;font-size:11px;color:var(--magenta)}
+.slot.br .ttl{color:var(--faint);font-weight:400;font-style:italic}
+.daymark{font-family:var(--f-display);font-size:11.5px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--faint);padding:22px 0 8px;border-bottom:1px solid var(--line-s)}
+
+/* ---------- footer ---------- */
+.foot{background:var(--indigo-d);color:rgba(255,255,255,.66);padding:30px 0 24px}
+.foot .top{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap;
+  padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot h4{font-family:var(--f-display);font-size:17px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.foot p{margin-top:10px;font-size:15px;max-width:40ch;line-height:1.6}
+.foot .lnk{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start}
+.foot .lnk a{color:rgba(255,255,255,.78);font-family:var(--f-display);font-size:12.5px;
+  font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.foot .lnk a:hover{color:#fff}
+.foot .bot{margin-top:18px;font-size:14px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .62s cubic-bezier(.22,.61,.36,1),transform .62s cubic-bezier(.22,.61,.36,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- views ---------- */
+.view{display:none}
+.view.on{display:block}
+.pagehead{background:linear-gradient(118deg,var(--indigo-d),var(--indigo) 55%,var(--violet));color:#fff}
+.pagehead .wrap{padding-block:42px 38px}
+.pagehead h1{margin-top:12px;font-size:clamp(26px,3.4vw,36px);font-weight:800;
+  letter-spacing:-.025em}
+.pagehead p{margin-top:10px;color:rgba(255,255,255,.80);font-size:16.5px;max-width:62ch}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .cfp{grid-template-columns:1fr}
+  .aside-card{position:static}
+  .keynote-grid,.g2,.contact,.venue{grid-template-columns:1fr}
+  .hero .wrap{grid-template-columns:1fr;gap:30px;align-items:start}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .sponsors,.g4{grid-template-columns:repeat(2,1fr)}
+  .facts .grid{grid-template-columns:repeat(2,1fr)}
+  .fact{border-left:0;border-top:1px solid var(--line);padding-inline:0}
+  .fact:nth-child(-n+2){border-top:0}
+  .fact:nth-child(2n){padding-left:26px;border-left:1px solid var(--line)}
+}
+/* collapse the nav before it can outgrow the bar */
+@media (max-width:1200px){
+  .nav{position:absolute;top:66px;left:0;right:0;background:var(--paper);
+    border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;
+    padding:12px;gap:2px;display:none;box-shadow:0 14px 30px rgba(27,37,104,.10);
+    max-height:calc(100vh - 66px);overflow-y:auto}
+  .nav.open{display:flex}
+  .nav a{padding:12px 14px}
+  .nav a.btn{margin:8px 0 0;justify-content:center;padding:14px 18px}
+  .navtoggle{display:block}
+}
+@media (max-width:720px){
+  body{font-size:16.5px}
+  .hero h1{font-size:clamp(23px,6.4vw,32px);letter-spacing:-.03em}
+  .hero .wrap{padding-block:34px 32px;gap:24px}
+  .mast{max-width:none}
+  .brand small{display:none}
+  section.band{padding:26px 0}
+  .wrap{padding-inline:20px}
+  section.band{padding:62px 0}
+  .g3,.sponsors,.g4{grid-template-columns:1fr}
+  .tl-item{grid-template-columns:96px 20px minmax(0,1fr)}
+  .tl-when{font-size:11.5px;padding-right:12px}
+  .tl-body{padding-left:18px}
+  .slot{grid-template-columns:1fr;gap:6px}
+  .mapwrap{height:200px}
+  .ed summary{padding:20px;gap:14px;flex-wrap:wrap}
+  .ed .yr{font-size:27px;min-width:64px}
+  .ed .prog{padding-inline:20px}
+  .step{grid-template-columns:34px minmax(0,1fr);gap:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" data-view="home" data-anchor=""><span class="dot"></span>HEC&nbsp;PARIS <small>AI &amp; Entrepreneurship</small></a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="#top" data-view="home" data-anchor="">Workshop</a>
+      <a href="#call" data-view="home" data-anchor="call">Call for papers</a>
+      <a href="#keynotes" data-view="home" data-anchor="keynotes">Keynotes</a>
+      <a href="#programme" data-view="programme">Programme</a>
+      <a href="#editions" data-view="editions">Past editions</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<div class="view on" id="v-home">
+
+<section class="hero">
+  <canvas id="c-hero" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="mast">
+      <div class="kicker">Fourth edition</div>
+      <h1>HEC Paris AI and Entrepreneurship Workshop</h1>
+      <p class="mast-when">Saturday 12 December 2026<br>
+        HEC Paris campus, <span class="nb">Jouy-en-Josas</span>, France</p>
+      <p class="mast-org"><span>Organised by</span> Thomas Åstebro, Carlos Serrano and Saeid Kazemi<br>
+        <span>Department of Economics and Decision Sciences, HEC Paris</span></p>
+    </div>
+    <aside class="mast-key">
+      <div class="mk-lbl">Submission deadline</div>
+      <div class="mk-date">30 September 2026</div>
+      <div class="mk-days"><b id="cd">&mdash;</b> remaining</div>
+      <div class="mk-note">Full-length papers. Decisions communicated early October 2026.</div>
+    </aside>
+  </div>
+</section>
+
+<!-- CALL FOR PAPERS -->
+<section class="band wash" id="call">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="sec-title">Call for papers</h2>
+      <p class="sec-lede">Thomas Åstebro and Carlos Serrano announce the fourth edition of the workshop, at the HEC Paris campus in Jouy-en-Josas.</p>
+    </div>
+
+    <div class="cfp">
+      <div class="cfp-main rv">
+        <div class="steps">
+          <div class="step"><div class="n">01</div><div><h4>Full-length paper</h4><p>Due 30 September 2026. Submission details follow.</p></div></div>
+          <div class="step"><div class="n">02</div><div><h4>Not already accepted</h4><p>Papers accepted for publication are not eligible.</p></div></div>
+          <div class="step"><div class="n">03</div><div><h4>Decisions</h4><p>Early October 2026.</p></div></div>
+        </div>
+      </div>
+      <aside class="aside-card rv">
+        <h3>Funding &amp; logistics</h3>
+        <ul>
+          <li>Accommodation covered for speakers and discussants, on-campus hotel.</li>
+          <li>Dinners on 11 December (Paris) and 12 December (near Versailles).</li>
+          <li>Travel funding limited &mdash; priority to discussants and junior scholars.</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- KEYNOTES -->
+<section class="band paper" id="keynotes">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="sec-title">Keynote speakers</h2>
+    </div>
+    <div class="keynote-grid">
+      <article class="keynote rv">
+              <div class="body">
+          <div class="role">Assistant Professor of Economics</div>
+          <h3>Ashesh Rambachan</h3>
+          <div class="aff">Massachusetts Institute of Technology</div>
+          <p>Econometrics and machine learning; human and algorithmic decision-making.</p>
+        </div>
+      </article>
+      <article class="keynote rv">
+              <div class="body">
+          <div class="role">Associate Professor of Strategic Management</div>
+          <h3>Kevin Bryan</h3>
+          <div class="aff">University of Toronto</div>
+          <p>Innovation, entrepreneurship, technological change, and the economics of AI.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="band wash" id="topics">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="sec-title">Topics</h2>
+      <p class="sec-lede">The workshop welcomes submissions on a broad range of topics related to entrepreneurship and AI. Areas of interest include, but are not limited to:</p>
+    </div>
+    <ul class="tlist rv">
+      <li>Implications of AI for the organization of firms and markets</li>
+      <li>Entrepreneurship and innovation</li>
+      <li>Technology adoption, and how AI and humans cooperate</li>
+      <li>Labor markets, re- and upskilling</li>
+      <li>Organizational learning</li>
+      <li>Entrepreneurial selection and mentorship</li>
+      <li>Strategic management decisions under uncertainty</li>
+      <li>Governance and risk management</li>
+      <li>Comparisons with past technology revolutions</li>
+    </ul>
+  </div>
+</section>
+
+<!-- DATES -->
+<section class="band paper" id="dates">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="sec-title">Key dates</h2>
+    </div>
+    <div class="tl rv">
+      <div class="tl-item key"><div class="tl-when">30 Sep<small>2026</small></div><div class="tl-rail"><i></i></div>
+        <div class="tl-body"><h4>Submission deadline</h4><p>Full-length papers.</p></div></div>
+      <div class="tl-item"><div class="tl-when">Early Oct<small>2026</small></div><div class="tl-rail"><i></i></div>
+        <div class="tl-body"><h4>Decisions communicated</h4><p>Authors and discussants confirmed.</p></div></div>
+      <div class="tl-item"><div class="tl-when">10&ndash;11 Dec<small>Thu&ndash;Fri</small></div><div class="tl-rail"><i></i></div>
+        <div class="tl-body"><h4>HEC Paris Entrepreneurship Workshop</h4><p>Separate workshop, immediately before this one.</p></div></div>
+      <div class="tl-item"><div class="tl-when">11 Dec<small>Friday</small></div><div class="tl-rail"><i></i></div>
+        <div class="tl-body"><h4>Welcome dinner</h4><p>Paris.</p></div></div>
+      <div class="tl-item key"><div class="tl-when">12 Dec<small>Saturday</small></div><div class="tl-rail"><i></i></div>
+        <div class="tl-body"><h4>Workshop</h4><p>Papers, keynotes and discussion, HEC Paris campus.</p></div></div>
+      <div class="tl-item"><div class="tl-when">12 Dec<small>Evening</small></div><div class="tl-rail"><i></i></div>
+        <div class="tl-body"><h4>Main dinner</h4><p>Near Versailles.</p></div></div>
+    </div>
+
+    <div class="sister rv">
+      <div class="txt">
+        <h3>HEC Paris Entrepreneurship Workshop &middot; 10&ndash;11 December 2026</h3>
+        <p>Organised by Johan Hombert and Jessica Jeffers. Entrepreneurship, finance and innovation.</p>
+      </div>
+      <a class="btn btn-outline" href="https://hecparisentrepreneurship.github.io" target="_blank" rel="noopener">Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL -->
+<section class="band wash" id="venue">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="sec-title">Practical information</h2>
+    </div>
+    <div class="g4 rv">
+      <div class="pcard">
+        <div class="pl">Address</div>
+        <div class="pv">HEC Paris campus &middot; Building S</div>
+        <div class="pn">1 Rue de la Libération, 78350 <span class="nb">Jouy-en-Josas</span>, France</div>
+        <a class="plink" href="https://www.google.com/maps/search/?api=1&amp;query=HEC+Paris%2C+1+Rue+de+la+Lib%C3%A9ration%2C+78350+Jouy-en-Josas%2C+France" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+      <div class="pcard">
+        <div class="pl">Date</div>
+        <div class="pv"><b>Saturday</b><br>12 December 2026</div>
+      </div>
+      <div class="pcard">
+        <div class="pl">Accommodation</div>
+        <div class="pv">On-campus conference hotel</div>
+        <div class="pn">Covered for speakers and discussants</div>
+      </div>
+      <div class="pcard">
+        <div class="pl">Contact</div>
+        <div class="pv"><a class="pmail" href="mailto:workshop@ionlabparis.com">workshop<wbr>@ionlabparis.com</a></div>
+        <div class="pn">Submissions, logistics and any questions</div>
+      </div>
+    </div>
+    <div class="mapwrap rv" id="mapwrap">
+      <div class="mapfb">
+        <span class="mappin"></span>
+        <b>HEC Paris campus &middot; Jouy-en-Josas</b>
+        <span class="mapnote">Interactive map appears on the published site.</span>
+      </div>
+    </div>
+    <p class="mapcap rv">HEC Paris campus, Jouy-en-Josas &middot;
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=HEC+Paris%2C+1+Rue+de+la+Lib%C3%A9ration%2C+78350+Jouy-en-Josas%2C+France" target="_blank" rel="noopener">open in Google Maps for directions</a></p>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section class="band paper" id="sponsors">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="sec-title">Supporting organisations</h2>
+    </div>
+    <div class="sponsors rv">
+      <div class="sponsor"><span>Innovation &amp; Entrepreneurship Center<small>HEC Paris</small></span></div>
+      <div class="sponsor"><span>Hi! Paris<small>Centre in Data Analytics &amp; AI</small></span></div>
+      <div class="sponsor"><span>Creative Destruction Lab<small>Paris</small></span></div>
+      <div class="sponsor"><span>ION Management Science Lab<small>Paris</small></span></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /home -->
+
+<!-- ============ PROGRAMME ============ -->
+<div class="view" id="v-programme">
+  <section class="pagehead">
+    <div class="wrap">
+      <span class="eyebrow on-dark">12 December 2026</span>
+      <h1>Programme</h1>
+      <p>Published once decisions are made.</p>
+    </div>
+  </section>
+  <section class="band wash">
+    <div class="wrap">
+      <div class="tba rv">
+        <div class="big">Announced early October</div>
+        <p>Papers are due 30 September 2026; decisions follow in early October. The running order appears here once fixed.</p>
+        <div class="skel" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <a class="btn btn-outline" style="margin-top:34px" href="#call" data-view="home" data-anchor="call">Call for papers</a>
+      </div>
+      <div class="g3 rv" style="margin-top:40px">
+        <div class="card lift"><h3>Shape of the day</h3><p>Previous editions: two keynotes, six papers, a closing roundtable.</p></div>
+        <div class="card lift"><h3>Discussants</h3><p>Each paper was paired with a discussant. Travel funding prioritises discussants and junior scholars.</p></div>
+        <div class="card lift"><h3>Dinners</h3><p>11 December in Paris; 12 December near Versailles.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ EDITIONS ============ -->
+<div class="view" id="v-editions">
+  <section class="pagehead">
+    <div class="wrap">
+      <span class="eyebrow on-dark">2023 &middot; 2024 &middot; 2025</span>
+      <h1>Past editions</h1>
+      <p>Programmes from 2023, 2024 and 2025.</p>
+    </div>
+  </section>
+  <section class="band wash">
+    <div class="wrap">
+
+<details class="ed rv" open>
+  <summary>
+    <span class="yr">2025</span>
+    <span class="meta"><h3>Third edition &middot; 13 December 2025</h3>
+      <p>Keynotes by Emma Brunskill (Stanford) and Luis Garicano (LSE)</p></span>
+    <span class="chev"></span>
+  </summary>
+  <div class="prog">
+    <div class="daymark">Friday 12 December</div>
+    <div class="slot"><div class="t">20:00</div><div><div class="ttl">Welcome dinner in Paris</div><div class="who">By invitation only</div></div></div>
+    <div class="daymark">Saturday 13 December</div>
+    <div class="slot br"><div class="t">08:30 &ndash; 09:00</div><div><div class="ttl">Coffee and welcome</div><div class="who">Thomas Åstebro and Carlos Serrano (HEC Paris)</div></div></div>
+    <div class="slot kn"><div class="t">09:00 &ndash; 09:45</div><div><div class="ttl">Training in the Age of AI: A Theory of Apprenticeship Viability</div><div class="who"><b>Luis Garicano</b> (London School of Economics)</div></div></div>
+    <div class="slot"><div class="t">09:45 &ndash; 10:35</div><div><div class="ttl">Voice AI in Firms: A Natural Field Experiment on Automated Job Interviews</div><div class="who">Luca Henkel (Erasmus University) and Brian Jabarian (Chicago Booth) &middot; Discussant: <b>Craig L. Anderson</b> (HEC Paris)</div></div></div>
+    <div class="slot br"><div class="t">10:35 &ndash; 10:50</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">10:50 &ndash; 11:40</div><div><div class="ttl">Noise or Signal? Professional Background and Prediction of Startup Success</div><div class="who">Jacqueline Lane, Nathan Rietzler and Yuqi Zhang &middot; Discussant: <b>Thorsten Grohsjean</b> (Bocconi University)</div></div></div>
+    <div class="slot"><div class="t">11:40 &ndash; 12:30</div><div><div class="ttl">Cognitive Uncertainty in Venture Selection: the Roles of Experience and Complexity</div><div class="who">Thomas Åstebro, Andrew Funck and Francesco Giordano (HEC Paris) &middot; Discussant: <b>Jose Peñalva</b> (Universidad Carlos III Madrid)</div></div></div>
+    <div class="slot br"><div class="t">12:30 &ndash; 13:30</div><div><div class="ttl">Lunch</div><div class="who">By invitation only</div></div></div>
+    <div class="slot kn"><div class="t">13:30 &ndash; 14:15</div><div><div class="ttl">Estimating the Value of Personalization</div><div class="who"><b>Emma Brunskill</b> (Stanford University)</div></div></div>
+    <div class="slot"><div class="t">14:15 &ndash; 15:05</div><div><div class="ttl">AI Regulation, Startup Financing, and Talent Allocation</div><div class="who">Junida Mulla (Oxford University) &middot; Discussant: <b>Paola Criscuolo</b> (Imperial College London)</div></div></div>
+    <div class="slot br"><div class="t">15:05 &ndash; 15:20</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">15:20 &ndash; 16:10</div><div><div class="ttl">Internal Initial Conditions and Path Dependence: An Experimental and AI-Synthetic Study</div><div class="who">Arnaldo Camuffo, Alfonso Gambardella and Saeid Kazemi (Bocconi University) &middot; Discussant: <b>Igor Asanov</b> (University of Kassel)</div></div></div>
+    <div class="slot"><div class="t">16:10 &ndash; 17:00</div><div><div class="ttl">Automation or Augmentation? Task Characteristics, Human-Centered Goals, and the Deployment of AI</div><div class="who">Maximilian Koehler and Henry Sauermann (ESMT Berlin) &middot; Discussant: <b>Eduard Talamàs</b> (IESE)</div></div></div>
+    <div class="slot br"><div class="t">17:00 &ndash; 17:15</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">17:15 &ndash; 18:00</div><div><div class="ttl">Roundtable &mdash; Mentorship as Infrastructure in the Age of AI</div><div class="who">Thomas Åstebro, Andrea Pignataro and Carlos Serrano</div></div></div>
+    <div class="slot br"><div class="t">18:00</div><div><div class="ttl">Closing remarks</div></div></div>
+    <div class="slot br"><div class="t">20:00</div><div><div class="ttl">Main dinner near Versailles</div><div class="who">By invitation only</div></div></div>
+  </div>
+</details>
+
+<details class="ed rv">
+  <summary>
+    <span class="yr">2024</span>
+    <span class="meta"><h3>Second edition &middot; 14 December 2024</h3>
+      <p>Keynotes by Joshua Gans (Rotman) and Timothy Bresnahan (Stanford)</p></span>
+    <span class="chev"></span>
+  </summary>
+  <div class="prog">
+    <div class="daymark">Friday 13 December</div>
+    <div class="slot"><div class="t">20:00</div><div><div class="ttl">Welcome dinner in Paris</div><div class="who">By invitation only</div></div></div>
+    <div class="daymark">Saturday 14 December &middot; Room 219, Building S</div>
+    <div class="slot br"><div class="t">08:30 &ndash; 09:00</div><div><div class="ttl">Coffee and welcome</div><div class="who">Thomas Åstebro and Carlos Serrano (HEC Paris)</div></div></div>
+    <div class="slot kn"><div class="t">09:00 &ndash; 09:45</div><div><div class="ttl">Knightian Uncertainty and Bayesian Entrepreneurship</div><div class="who"><b>Joshua Gans</b> (Rotman, University of Toronto)</div></div></div>
+    <div class="slot"><div class="t">09:45 &ndash; 10:35</div><div><div class="ttl">Theorizing with Large Language Models</div><div class="who">Matteo Tranchero (Wharton), Cecil-Francis Brenninkmeijer, Arul Murugan and Abhishek Nagaraj (UC Berkeley) &middot; Discussant: <b>Henry Sauermann</b> (ESMT Berlin)</div></div></div>
+    <div class="slot br"><div class="t">10:35 &ndash; 10:50</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">10:50 &ndash; 11:40</div><div><div class="ttl">Working Together, Forever? Project Evaluation, AI, and Managerial Redundancy</div><div class="who">Vivek Choudhary (Nanyang), Arianna Marchetti (London Business School), Yash Raj Shrestha (University of Lausanne) and Phanish Puranam (INSEAD) &middot; Discussant: <b>Ronald Klingebiel</b> (Frankfurt School)</div></div></div>
+    <div class="slot"><div class="t">11:40 &ndash; 12:30</div><div><div class="ttl">AI and Theory-Based Decisions: Experimental Evidence and Research Program</div><div class="who">Arnaldo Camuffo, Alfonso Gambardella, Saeid Kazemi, Abhinav Pandey and Andrea Pignataro (Bocconi University) &middot; Discussant: <b>Gael Le Mens</b> (Universitat Pompeu Fabra)</div></div></div>
+    <div class="slot br"><div class="t">12:30 &ndash; 13:30</div><div><div class="ttl">Lunch</div><div class="who">By invitation only</div></div></div>
+    <div class="slot kn"><div class="t">13:30 &ndash; 14:15</div><div><div class="ttl">The State of Artificial Intelligence Usage and Prospects for the Future</div><div class="who"><b>Timothy Bresnahan</b> (Stanford University)</div></div></div>
+    <div class="slot"><div class="t">14:15 &ndash; 15:05</div><div><div class="ttl">Artificial Intelligence in the Knowledge Economy</div><div class="who">Enrique Ide and Eduard Talamàs (IESE) &middot; Discussant: <b>Ricardo Alonso</b> (London School of Economics)</div></div></div>
+    <div class="slot br"><div class="t">15:05 &ndash; 15:20</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">15:20 &ndash; 16:10</div><div><div class="ttl">Reputational Algorithm Aversion</div><div class="who">Gregory Weitzner (McGill University) &middot; Discussant: <b>Cathy Liu Yang</b> (HEC Paris)</div></div></div>
+    <div class="slot"><div class="t">16:10 &ndash; 17:00</div><div><div class="ttl">Experimental Evidence on AI-based Job Market Matching and Market Participation</div><div class="who">Kevin Boudreau (Northeastern / NBER) and Sarah Bana (Chapman / Stanford) &middot; Discussant: <b>Sara Signorelli</b> (École Polytechnique / CREST)</div></div></div>
+    <div class="slot br"><div class="t">17:00 &ndash; 17:15</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">17:15 &ndash; 18:15</div><div><div class="ttl">Roundtable &mdash; The Future of Compute in Europe?</div><div class="who">Clara Chappaz (French Government), Maria Maragkou (Riverlane) and Philippe Notton (SiPearl) &middot; Moderated by <b>Thomas Åstebro</b> (HEC Paris)</div></div></div>
+    <div class="slot br"><div class="t">18:15</div><div><div class="ttl">Closing remarks</div></div></div>
+    <div class="slot br"><div class="t">19:30</div><div><div class="ttl">Main dinner</div><div class="who">By invitation only</div></div></div>
+  </div>
+</details>
+
+<details class="ed rv">
+  <summary>
+    <span class="yr">2023</span>
+    <span class="meta"><h3>First edition &middot; 16 December 2023</h3>
+      <p>Keynotes by Alfonso Gambardella (Bocconi) and Avi Goldfarb (Rotman)</p></span>
+    <span class="chev"></span>
+  </summary>
+  <div class="prog">
+    <div class="daymark">Friday 15 December</div>
+    <div class="slot"><div class="t">19:30</div><div><div class="ttl">Welcome dinner in Paris</div><div class="who">By invitation only</div></div></div>
+    <div class="daymark">Saturday 16 December &middot; Bellon Amphitheatre, Building S</div>
+    <div class="slot br"><div class="t">08:30 &ndash; 09:00</div><div><div class="ttl">Coffee and welcome</div><div class="who">Thomas Åstebro and Carlos Serrano (HEC Paris)</div></div></div>
+    <div class="slot kn"><div class="t">09:00 &ndash; 09:45</div><div><div class="ttl">Theory-driven, Data-driven, and AI-driven Innovations</div><div class="who"><b>Alfonso Gambardella</b> (Bocconi University)</div></div></div>
+    <div class="slot"><div class="t">09:45 &ndash; 10:35</div><div><div class="ttl">Algorithmic Management in Scientific Research</div><div class="who">Maximilian Koehler and Henry Sauermann (ESMT Berlin) &middot; Discussant: <b>Chiara Franzoni</b> (Politecnico di Milano)</div></div></div>
+    <div class="slot br"><div class="t">10:35 &ndash; 10:50</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">10:50 &ndash; 11:40</div><div><div class="ttl">Machine Predictions and Causal Explanations</div><div class="who">Xi Kang (Vanderbilt) and Hyunjin Kim (INSEAD) &middot; Discussant: <b>Arnaldo Camuffo</b> (Bocconi University)</div></div></div>
+    <div class="slot"><div class="t">11:40 &ndash; 12:30</div><div><div class="ttl">The Crowdless Future?</div><div class="who">Leonard Boussioux (University of Washington / MIT) and colleagues at Harvard Business School &middot; Discussant: <b>Ammon Salter</b> (Warwick)</div></div></div>
+    <div class="slot br"><div class="t">12:30 &ndash; 13:30</div><div><div class="ttl">Lunch</div><div class="who">By invitation only</div></div></div>
+    <div class="slot kn"><div class="t">13:30 &ndash; 14:15</div><div><div class="ttl">Pause Giant AI Experiments?</div><div class="who"><b>Avi Goldfarb</b> (Rotman, University of Toronto)</div></div></div>
+    <div class="slot"><div class="t">14:15 &ndash; 15:05</div><div><div class="ttl">GPTs are GPTs</div><div class="who">Tyna Eloundou and Sam Manning (OpenAI) with colleagues &middot; Discussant: <b>Mireia Giné</b> (IESE)</div></div></div>
+    <div class="slot br"><div class="t">15:05 &ndash; 15:20</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">15:20 &ndash; 16:10</div><div><div class="ttl">Combining Human Expertise with AI</div><div class="who">Nikhil Agarwal (MIT) and colleagues &middot; Discussant: <b>Kevin Bryan</b> (Rotman, University of Toronto)</div></div></div>
+    <div class="slot"><div class="t">16:10 &ndash; 17:00</div><div><div class="ttl">Will It be Cost-Effective to Automate?</div><div class="who">Maja Svanberg (MIT) and colleagues &middot; Discussant: <b>Antonin Bergeaud</b> (HEC Paris)</div></div></div>
+    <div class="slot br"><div class="t">17:00 &ndash; 17:15</div><div><div class="ttl">Coffee break</div></div></div>
+    <div class="slot"><div class="t">17:15 &ndash; 18:15</div><div><div class="ttl">Roundtable with industry experts</div><div class="who">Moderated by <b>Peter Fischer</b> (HEC Paris)</div></div></div>
+    <div class="slot br"><div class="t">18:15</div><div><div class="ttl">Closing remarks</div></div></div>
+    <div class="slot br"><div class="t">19:00 &ndash; 22:30</div><div><div class="ttl">Dinner near Versailles</div><div class="who">By invitation only</div></div></div>
+  </div>
+</details>
+
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h4>HEC Paris AI &amp; Entrepreneurship Workshop</h4>
+        <p>Fourth edition &middot; 12 December 2026 &middot; HEC Paris campus, 1 Rue de la Libération, 78350 Jouy-en-Josas, France.</p>
+      </div>
+      <div class="lnk">
+        <a href="#top" data-view="home" data-anchor="">Workshop</a>
+        <a href="#call" data-view="home" data-anchor="call">Call for papers</a>
+        <a href="#programme" data-view="programme">Programme</a>
+        <a href="#editions" data-view="editions">Past editions</a>
+      </div>
+    </div>
+    <div class="bot">
+      <span>Fourth HEC Paris AI and Entrepreneurship Workshop.</span>
+      <span><a href="mailto:workshop@ionlabparis.com" style="color:rgba(255,255,255,.8)">workshop@ionlabparis.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- view switching (click-handled; never navigates) ---------- */
+  var views = {home:'v-home', programme:'v-programme', editions:'v-editions'};
+  function closeMenu(){
+    var nav = document.getElementById('nav');
+    if(nav) nav.classList.remove('open');
+    var t = document.getElementById('navtoggle');
+    if(t) t.setAttribute('aria-expanded','false');
+  }
+  function show(view, anchor){
+    if(!views[view]) view = 'home';
+    current = view;
+    Object.keys(views).forEach(function(k){
+      var el = document.getElementById(views[k]);
+      if(el) el.classList.toggle('on', k === view);
+    });
+    closeMenu();
+    reveal(true);
+    setNav();
+    if(anchor){
+      var t = document.getElementById(anchor);
+      if(t){
+        setTimeout(function(){
+          t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+        }, 30);
+        return;
+      }
+    }
+    window.scrollTo({top:0, behavior:'auto'});
+  }
+  document.addEventListener('click', function(e){
+    var el = e.target, a = null;
+    while(el && el !== document){
+      if(el.tagName === 'A' && (el.hasAttribute('data-view') || el.hasAttribute('data-anchor'))){ a = el; break; }
+      el = el.parentNode;
+    }
+    if(!a) return;
+    e.preventDefault();
+    show(a.getAttribute('data-view') || 'home', a.getAttribute('data-anchor') || '');
+  }, false);
+
+  /* ---------- nav highlight: route + in-page scroll spy ---------- */
+  var current = 'home';
+  var SPY = ['call','keynotes'];   // home-page anchors, in document order
+  function currentAnchor(){
+    var y = window.scrollY + 96, found = '';
+    for(var i=0;i<SPY.length;i++){
+      var el = document.getElementById(SPY[i]);
+      if(el && (el.getBoundingClientRect().top + window.scrollY) <= y) found = SPY[i];
+    }
+    return found;
+  }
+  function setNav(){
+    var onHome = current === 'home';
+    var anchor = onHome ? currentAnchor() : null;
+    document.querySelectorAll('.nav a').forEach(function(a){
+      if(a.classList.contains('btn')) return;
+      var an = a.getAttribute('data-anchor'), v = a.getAttribute('data-view'), on;
+      if(an !== null) on = onHome && an === anchor;
+      else on = !!v && v === current;
+      a.classList.toggle('active', on);
+    });
+  }
+  var spyQueued = false;
+  window.addEventListener('scroll', function(){
+    if(spyQueued) return;
+    spyQueued = true;
+    requestAnimationFrame(function(){ spyQueued = false; if(current === 'home') setNav(); });
+  }, {passive:true});
+
+  /* ---------- mobile nav ---------- */
+  var tg = document.getElementById('navtoggle');
+  if(tg) tg.addEventListener('click', function(){
+    var nav = document.getElementById('nav');
+    var open = nav.classList.toggle('open');
+    tg.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  document.querySelectorAll('.nav a').forEach(function(a){
+    a.addEventListener('click', function(){
+      var nav = document.getElementById('nav');
+      if(nav) nav.classList.remove('open');
+      if(tg) tg.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- scroll reveal ---------- */
+  var io = null;
+  if('IntersectionObserver' in window && !reduce){
+    io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.06});
+  }
+  function reveal(rescan){
+    var nodes = document.querySelectorAll('.view.on .rv');
+    nodes.forEach(function(n, i){
+      if(n.classList.contains('in')) return;
+      if(!io){ n.classList.add('in'); return; }
+      n.style.transitionDelay = Math.min(i,6) * 55 + 'ms';
+      io.observe(n);
+    });
+  }
+
+  /* ---------- campus map ----------
+     The Artifact viewer's CSP forbids third-party frames, so an <iframe> there
+     renders as a broken-frame box. Insert it only off that host; the styled
+     placeholder stands in everywhere else. */
+  (function(){
+    var box = document.getElementById('mapwrap');
+    if(!box) return;
+    var host = location.hostname || '';
+    if(/(^|\.)claudeusercontent\.com$|(^|\.)claude\.ai$/i.test(host)) return;
+    var f = document.createElement('iframe');
+    f.className = 'mapframe';
+    f.title = 'Map of the HEC Paris campus, Jouy-en-Josas';
+    f.loading = 'lazy';
+    f.referrerPolicy = 'no-referrer-when-downgrade';
+    f.src = 'https://maps.google.com/maps?q=HEC%20Paris%2C%201%20Rue%20de%20la%20Lib%C3%A9ration%2C%2078350%20Jouy-en-Josas%2C%20France&z=15&output=embed';
+    box.appendChild(f);
+  })();
+
+  /* ---------- days remaining ---------- */
+  var deadline = new Date('2026-09-30T23:59:59+02:00').getTime();
+  var cd = document.getElementById('cd');
+  if(cd){
+    var diff = deadline - Date.now();
+    if(diff <= 0){ cd.textContent = 'Closed'; }
+    else {
+      var d = Math.ceil(diff/86400000);
+      cd.textContent = d === 1 ? '1 day' : d + ' days';
+    }
+  }
+
+  /* ---------- constellation ---------- */
+  function constellation(canvas, opts){
+    if(!canvas) return;
+    var ctx = canvas.getContext('2d');
+    if(!ctx) return;
+    var arms = [], W = 0, H = 0, cx = 0, cy = 0, R = 0, dpr = 1, t0 = performance.now();
+    var palette = ['#E0007B','#E0007B','#E8156F','#EF3C5C','#F2673C','#F2673C',
+                   '#E0007B','#C93A93','#9B4BA8','#6E63C4','#8AA2D8','#E0007B'];
+    function build(){
+      arms = [];
+      var n = palette.length;
+      for(var i=0;i<n;i++){
+        var f = i/(n-1);
+        arms.push({
+          a: opts.spread0 + f*(opts.spread1-opts.spread0) + (Math.sin(i*7.3)*0.05),
+          len: 0.52 + 0.48*Math.abs(Math.sin(i*2.1+0.6)),
+          bow: (i%2 ? 1 : -1) * (0.14 + 0.12*Math.abs(Math.cos(i*1.7))),
+          r: 5.5 + 3.6*Math.abs(Math.sin(i*3.1)),
+          col: palette[i],
+          ph: i*0.62,
+          ring: (i%4===0)
+        });
+      }
+    }
+    function size(){
+      dpr = Math.min(window.devicePixelRatio||1, 2);
+      var rect = canvas.getBoundingClientRect();
+      W = Math.max(rect.width,1); H = Math.max(rect.height,1);
+      canvas.width = Math.round(W*dpr); canvas.height = Math.round(H*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      cx = W*opts.cx; cy = H*opts.cy;
+      R = Math.min(W*opts.rw, H*opts.rh);
+    }
+    function draw(now){
+      var el = (now - t0)/1000;
+      var intro = reduce ? 1 : Math.max(0, Math.min(1, el/1.5));
+      var ease = 1 - Math.pow(1-intro, 3);
+      ctx.clearRect(0,0,W,H);
+      ctx.globalAlpha = opts.alpha;
+      for(var i=0;i<arms.length;i++){
+        var A = arms[i];
+        var wob = reduce ? 0 : Math.sin(el*0.42 + A.ph)*0.028;
+        var ang = A.a + wob;
+        var L = R*A.len*ease;
+        var ex = cx + Math.cos(ang)*L, ey = cy + Math.sin(ang)*L;
+        var mx = cx + Math.cos(ang)*L*0.52 - Math.sin(ang)*L*A.bow;
+        var my = cy + Math.sin(ang)*L*0.52 + Math.cos(ang)*L*A.bow;
+        var g = ctx.createLinearGradient(cx,cy,ex,ey);
+        g.addColorStop(0, A.col); g.addColorStop(1, A.col);
+        ctx.strokeStyle = g;
+        ctx.lineWidth = Math.min(7, Math.max(2.6, R*0.013));
+        ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(cx,cy); ctx.quadraticCurveTo(mx,my,ex,ey); ctx.stroke();
+        if(intro > 0.55){
+          var na = Math.min(1,(intro-0.55)/0.45);
+          ctx.globalAlpha = opts.alpha*na;
+          if(A.ring){
+            ctx.strokeStyle = A.col; ctx.lineWidth = 1.4;
+            ctx.beginPath(); ctx.arc(ex,ey,A.r+5.5,0,Math.PI*2); ctx.stroke();
+          }
+          ctx.fillStyle = '#EEF1FA';
+          ctx.beginPath(); ctx.arc(ex,ey,A.r,0,Math.PI*2); ctx.fill();
+          ctx.globalAlpha = opts.alpha;
+        }
+      }
+      var cr = Math.max(0.5, Math.min(20, Math.max(9, R*0.036))*ease);
+      ctx.strokeStyle = 'rgba(255,255,255,.42)'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(cx,cy,cr+8,0,Math.PI*2); ctx.stroke();
+      ctx.fillStyle = '#E0007B';
+      ctx.beginPath(); ctx.arc(cx,cy,cr,0,Math.PI*2); ctx.fill();
+      ctx.globalAlpha = 1;
+      if(!reduce) raf = requestAnimationFrame(draw);
+    }
+    var raf = null;
+    function start(){ size(); build(); if(raf) cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); }
+    var rt;
+    window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(start, 160); });
+    start();
+  }
+
+  function narrow(){ return window.innerWidth < 900; }
+  constellation(document.getElementById('c-hero'), {
+    cx: narrow()?0.92:0.80, cy: narrow()?0.14:0.90,
+    rw: narrow()?0.42:0.34, rh: narrow()?0.36:0.84,
+    spread0: narrow()?-1.34:-2.90, spread1: narrow()?1.34:-0.38,
+    alpha: narrow()?0.22:0.9
+  });
+
+  var start = 'home';
+  try {
+    var h = (location.hash || '').replace(/^#\/?/, '');
+    if(views[h]) start = h;
+  } catch(err){}
+  show(start, '');
+  reveal();
+  window.addEventListener('load', function(){ reveal(); });
+})();
+</script>
+</body>
+</html>
