@@ -378,8 +378,6 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
     <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav">
       <a href="#top" data-view="home" data-anchor="">Workshop</a>
-      <a href="#call" data-view="home" data-anchor="call">Call for papers</a>
-      <a href="#keynotes" data-view="home" data-anchor="keynotes">Keynotes</a>
       <a href="#programme" data-view="programme">Programme</a>
       <a href="#editions" data-view="editions">Past editions</a>
       <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdH93SW-7UCCFaUsc1O7Kyyl10M550bs5OvOYA-rTcyeWSwTw/viewform" target="_blank" rel="noopener">Submit a paper</a>
@@ -718,7 +716,6 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
       </div>
       <div class="lnk">
         <a href="#top" data-view="home" data-anchor="">Workshop</a>
-        <a href="#call" data-view="home" data-anchor="call">Call for papers</a>
         <a href="#programme" data-view="programme">Programme</a>
         <a href="#editions" data-view="editions">Past editions</a>
       </div>
@@ -777,7 +774,7 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
 
   /* ---------- nav highlight: route + in-page scroll spy ---------- */
   var current = 'home';
-  var SPY = ['call','keynotes'];   // home-page anchors, in document order
+  var SPY = [];   // no in-page anchors in the nav; 'Workshop' stays active on home
   function currentAnchor(){
     var y = window.scrollY + 96, found = '';
     for(var i=0;i<SPY.length;i++){
