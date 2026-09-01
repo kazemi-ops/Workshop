@@ -119,7 +119,6 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
   color:#fff;line-height:1.45}
 .mast-org{margin-top:13px;font-size:15px;line-height:1.5;color:rgba(255,255,255,.80)}
 .mast-org span{color:rgba(255,255,255,.55)}
-.mast-cta{margin-top:22px}
 
 .mast-key{background:rgba(14,19,58,.72);border:1px solid rgba(255,255,255,.22);
   border-radius:var(--r);padding:22px 24px;backdrop-filter:blur(10px);
@@ -140,12 +139,9 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
 
 /* ---------- call for papers ---------- */
 .cfp{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:30px;align-items:start;margin-top:18px}
-.cfp-main .steps{display:grid;gap:0;margin-top:4px;border-top:1px solid var(--line)}
-.step{display:grid;grid-template-columns:56px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
-.step .n{font-family:var(--f-display);font-size:13px;font-weight:800;letter-spacing:.1em;
-  color:var(--magenta);padding-top:4px;font-variant-numeric:tabular-nums}
-.step h4{font-size:18.5px;font-weight:700}
-.step p{margin-top:6px;color:var(--muted);font-size:16px}
+.cfp-body{margin-top:16px;font-size:17px;line-height:1.62;color:var(--ink);max-width:62ch}
+.cfp-body b{font-weight:700;color:var(--indigo)}
+.cfp-main .btn{margin-top:26px}
 .aside-card{background:var(--indigo);color:#fff;border-radius:var(--r);padding:24px;position:sticky;top:82px}
 .aside-card h3{font-size:19px;font-weight:700;color:#fff}
 .aside-card ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:14px}
@@ -363,7 +359,6 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
   .ed summary{padding:20px;gap:14px;flex-wrap:wrap}
   .ed .yr{font-size:27px;min-width:64px}
   .ed .prog{padding-inline:20px}
-  .step{grid-template-columns:34px minmax(0,1fr);gap:12px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -404,7 +399,6 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
         HEC Paris campus, <span class="nb">Jouy-en-Josas</span>, France</p>
       <p class="mast-org"><span>Organised by</span> Thomas Åstebro, Carlos Serrano and Saeid Kazemi<br>
         <span>Department of Economics and Decision Sciences, HEC Paris</span></p>
-      <p class="mast-cta"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdH93SW-7UCCFaUsc1O7Kyyl10M550bs5OvOYA-rTcyeWSwTw/viewform" target="_blank" rel="noopener">Submit a paper</a></p>
     </div>
     <aside class="mast-key">
       <div class="mk-lbl">Submission deadline</div>
@@ -425,11 +419,12 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
 
     <div class="cfp">
       <div class="cfp-main rv">
-        <div class="steps">
-          <div class="step"><div class="n">01</div><div><h4>Full-length paper</h4><p>Due 30 September 2026. Submit through the online form.</p></div></div>
-          <div class="step"><div class="n">02</div><div><h4>Not already accepted</h4><p>Papers accepted for publication are not eligible.</p></div></div>
-          <div class="step"><div class="n">03</div><div><h4>Decisions</h4><p>Early October 2026.</p></div></div>
-        </div>
+        <p class="cfp-body">To be considered for the programme, submit a full-length paper by
+          <b>Wednesday 30 September 2026</b> through the online form. Papers already accepted
+          for publication are not eligible. Decisions are communicated in early October.</p>
+        <p class="cfp-body">The workshop offers plenty of opportunity for research discussion and
+          networking, both during and outside the sessions.</p>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdH93SW-7UCCFaUsc1O7Kyyl10M550bs5OvOYA-rTcyeWSwTw/viewform" target="_blank" rel="noopener">Submit a paper</a>
       </div>
       <aside class="aside-card rv">
         <h3>Funding &amp; logistics</h3>
@@ -438,7 +433,6 @@ section.band.paper{background:var(--paper);border-block:1px solid var(--line)}
           <li>Dinners on 11 December (Paris) and 12 December (near Versailles).</li>
           <li>Travel funding limited &mdash; priority to discussants and junior scholars.</li>
         </ul>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdH93SW-7UCCFaUsc1O7Kyyl10M550bs5OvOYA-rTcyeWSwTw/viewform" target="_blank" rel="noopener">Submit a paper</a>
       </aside>
     </div>
   </div>
